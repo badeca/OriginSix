@@ -169,6 +169,26 @@ nav.show ul.grid {
   gap: 4rem;
 }
 
+.toggle {
+  color: var(--base-color);
+  font-size: 1.5rem;
+  cursor: pointer; /* deixa a mãozinha do mickey quando passa o mouse em cima */
+}
+
+/* toggle menu */
+nav .icon-close {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  right: 1.5rem;
+  /* adicionar transição */
+}
+
+nav.show .icon-close {
+  opacity: 1;
+  visibility: visible;
+}
+
 /********** LOGO **********/
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;

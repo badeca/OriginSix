@@ -18,9 +18,19 @@
 
   <body>
     <header id="header">
-      <nav class="container">
+      <nav class="container show">
         <a class="logo" href="#"> beauty<span>salon</span>. </a>
-        <div class="menu">...</div>
+        <div class="menu">
+          <ul class="grid">
+            <li><a class="tittle" href="#home">Início</a></li>
+            <li><a class="tittle" href="#about">Sobre</a></li>
+            <li><a class="tittle" href="#services">Serviços</a></li>
+            <li><a class="tittle" href="#testimonials">Depoimentos</a></li>
+            <li><a class="tittle" href="#contact">Contatos</a></li>
+          </ul>
+        </div>
+        <div class="open">...</div>
+        <div class="close">x</div>
       </nav>
     </header>
 
@@ -34,7 +44,7 @@
             />
           </div>
           <div class="text">
-            <h1>Saúde natural para os seus cabelos</h1>
+            <h2 class="tittle">Saúde natural para os seus cabelos</h2>
             <p>
               Um salão exclusivo em São Paulo, especializado em tratamentos
               naturais.
@@ -44,8 +54,12 @@
         </div>
       </section>
       <div class="divider-1"></div>
-      <section class="section">
-        <div class="container">outra section</div>
+
+      <section class="section" id="about">
+        <div class="container grid">Sobre</div>
+        <section class="section" id="services">
+          <div class="container grid">Serviços</div>
+        </section>
       </section>
     </main>
   </body>

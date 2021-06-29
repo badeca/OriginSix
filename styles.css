@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+ul {
+  list-style: none;
+}
+
 a {
   text-decoration: none; /* tira o underline */
 }
@@ -39,7 +43,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1 {
+.tittle {
   font: 700 1.875rem 'Poppins', sans-serif;
   color: var(--title-color);
   -webkit-font-smoothing: auto;
@@ -95,6 +99,11 @@ h1 {
   background-color: var(--body-color);
 }
 
+main {
+  margin-top: calc(var(--header-height) + 2rem);
+}
+
+/********** NAVIGATION **********/
 nav {
   height: var(--header-height);
   display: flex;
@@ -103,6 +112,64 @@ nav {
   width: 100%; /* o filho precisa ter a mesma largura que o pai pelo display flex */
 }
 
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: color 0.3s; /* há outras configurações de transição no transition  */
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: var(--base-color);
+}
+
+/* pseudoelemento */
+nav ul li a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: var(--base-color);
+  position: absolute; /* absoluto em relação ao próximo pai dele que tiver position relative, escolhemos o "a" */
+  left: 0;
+  bottom: -1.5rem;
+
+  transition: width 0.2s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* esconde o menu */
+nav .menu {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/********** Quando o menu está aparecendo no mobile **********/
+/* quando nav receber a classe show (através do js) */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+
+  background: var(--body-color);
+  height: 100vh; /* 100% da viewport height */
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: grid; /* dá novas oportunidades de display */
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+/********** LOGO **********/
 .logo {
   font: 700 1.31rem 'Poppins', sans-serif;
   color: var(--title-color);
@@ -126,10 +193,6 @@ nav {
 /* no fim e no início de cada section há uma separação de 80px */
 .section {
   padding: 5rem 0;
-}
-
-main {
-  margin-top: var(--header-height);
 }
 
 /********** Trataremos agora da Home **********/

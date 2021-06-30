@@ -35,6 +35,10 @@ img {
   --body-color: hsl(0 0% 98%);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /********** Trataremos agora do Header e configurações gerais **********/
 body {
   font: 400 1rem 'DM Sans', sans-serif; /*peso, altura, família*/
@@ -99,6 +103,10 @@ body {
   background-color: var(--body-color);
 }
 
+#header.scroll {
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.2);
+}
+
 main {
   margin-top: calc(var(--header-height) + 2rem);
 }
@@ -146,6 +154,12 @@ nav ul li a:hover::after {
 nav .menu {
   opacity: 0;
   visibility: hidden;
+  top: -20rem;
+  transition: 0.2s;
+}
+
+nav .menu ul {
+  display: none; /* ele some dps de clicar no menu, para depois aparecer de novo certinho */
 }
 
 /********** Quando o menu está aparecendo no mobile **********/
@@ -165,6 +179,10 @@ nav.show .menu {
   place-content: center;
 }
 
+nav.show .menu ul {
+  display: grid; /* faz o menu reaparecer */
+}
+
 nav.show ul.grid {
   gap: 4rem;
 }
@@ -181,12 +199,14 @@ nav .icon-close {
   visibility: hidden;
   position: absolute;
   right: 1.5rem;
-  /* adicionar transição */
+  top: -1.5rem;
+  transition: 0.2s;
 }
 
 nav.show .icon-close {
   opacity: 1;
   visibility: visible;
+  top: 1.5rem;
 }
 
 /********** LOGO **********/
@@ -213,6 +233,18 @@ nav.show .icon-close {
 /* no fim e no início de cada section há uma separação de 80px */
 .section {
   padding: 5rem 0;
+}
+
+.section .tittle {
+  margin-bottom: 1rem;
+}
+
+.section header {
+  margin-bottom: 4rem;
+}
+
+.section header strong {
+  color: var(--base-color);
 }
 
 /********** Trataremos agora da Home **********/
@@ -264,4 +296,81 @@ nav.show .icon-close {
 #home .text p {
   margin-bottom: 2rem;
   max-width: 100%; /* para não passar o limite do tamanho da página */
+}
+
+/********** Trataremos agora do About **********/
+
+#about {
+  background: white;
+}
+
+#about .container {
+  margin: 0;
+}
+
+#about .image {
+  position: relative; /* posicionamento da imagem relativo à classe imagem, o contrário disso seria position: absolute; que seria relativo à página inteira */
+}
+
+/* utilizando um pseudo elemento */
+#about .image::before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  background: var(--base-color-second);
+  position: absolute;
+  top: -8.3%; /* o cálculo relativo (regra de três) comparado ao tamanho completo da imagem e o tamanho do espaçamento */
+  left: -33%;
+  z-index: 0; /* 1 permite que o pseudo elemento fique à frente da imagem */
+}
+
+#about .image img {
+  position: relative;
+}
+
+#about .image img,
+#about .image::before {
+  border-radius: 0.25rem;
+}
+
+#about .text {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.divider-2 {
+  height: 1px;
+  background: linear-gradient(
+    270deg,
+    hsla(var(--hue), 65%, 88%, 0.34) 0%,
+    hsla(var(--hue), 36%, 57%, 1) 100%
+      /* #69b99d 0%,
+    rgba(204, 244, 230, 0.34) 100% */
+  );
+}
+
+/********** Trataremos agora do Services **********/
+
+.cards.grid {
+  gap: 1.5rem;
+}
+
+.card {
+  padding: 3.625rem 2rem;
+  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+  border-bottom: 0.25rem solid var(--base-color);
+  border-radius: 0.25rem 0.25rem 0 0;
+  text-align: center;
+}
+
+.card i {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-size: 5rem;
+  color: var(--base-color);
+}
+
+.card tittle {
+  font-size: 1.5rem;
+  margin-bottom: 0.74rem;
 }

@@ -1,10 +1,10 @@
 <h2 align="center">
   🌸 Desenvolvido na Next Level Week 6.0 (Rocketseat!) 🌸
 </h2>
-
 <p align="center">
-	<img src="https://github.com/badeca/OriginSix/blob/main/images/img1.png?raw=true" width=95% />
+	<img src="https://github.com/badeca/OriginSix/blob/main/assets/images/img1.png?raw=true" width=95% />
 </p>
+
 
 
 ### :rocket: ​Tecnologias

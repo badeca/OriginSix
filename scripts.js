@@ -32,7 +32,6 @@ window.addEventListener('scroll', function () {
 })
 
 /* Testimonials slider usando swiper */
-
 const swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   pagination: {

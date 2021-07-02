@@ -227,6 +227,10 @@ nav.show .icon-close {
   color: var(--base-color);
 }
 
+.logo-alt span {
+  color: var(--body-color);
+}
+
 .container {
   /* width: 100%; */
   margin-left: 1.5rem;
@@ -482,4 +486,42 @@ nav.show .icon-close {
 #contact ul li i {
   font-size: 1.5rem;
   color: var(--base-color);
+}
+
+/********** Trataremos agora do Footer **********/
+footer {
+  background: var(--base-color);
+}
+
+footer .logo {
+  display: inline-block; /* o display normal é inline, mas ele não tem opção de colocar margin-bottom */
+  margin-bottom: 1.5rem;
+}
+
+footer .brand p {
+  color: var(--text-color-light);
+  margin-bottom: 0.75rem;
+}
+
+footer i {
+  font-size: 1.5rem;
+  color: var(--text-color-light);
+}
+
+footer .social a {
+  margin-right: 2rem;
+}
+
+/* Back to top */
+.back-to-top {
+  background: var(--base-color);
+  color: var(--text-color-light);
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  padding: 0.5rem;
+  clip-path: circle();
+
+  font-size: 1.5rem;
+  line-height: 0;
 }
